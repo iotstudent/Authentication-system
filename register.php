@@ -8,7 +8,7 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="text-center"> Register</h2>
+                <h2 class="text-center text-primary"> Register</h2>
             </div>
         </div>
         <div class="row">

@@ -7,7 +7,7 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="text-center"> Login</h2>
+                <h2 class="text-center text-primary"> Login</h2>
 
                 <?php
                     if (isset($_SESSION['message']) && !empty($_SESSION['message'])) {

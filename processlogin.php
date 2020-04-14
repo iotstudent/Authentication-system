@@ -47,8 +47,16 @@ if ($errorCount > 0) {
                 $_SESSION['dept'] = $userObject->department;
                 $_SESSION['reg_date'] = $userObject->reg_date;
                 $_SESSION['log_date'] = date("Y-m-d h:i:sa");
+                if($_SESSION['role'] == "Patient"){
+                    header("Location: patientdashboard.php");
+                    die();
+                }else if($_SESSION['role'] == "Medical staff"){
+                    header("Location: staffdashboard.php"); 
+                    die();   
+                }else{
                 header("Location: dashboard.php");
                 die();
+                }
             }
         }
     }
