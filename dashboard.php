@@ -8,15 +8,20 @@ if (!isset($_SESSION['loggedin'])) {
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
-            <h2 class="text-center text-primary">Dashboard</h2>
-            <a href="logout.php" class="btn btn-primary">Logout</a>
+        <br><br>
+    <div class="col-md-2" style="border-right:2px blue solid;">
+            <img src="img/cartoon.jpg" alt="" height="100" width="100"  style="border-radius:50%;">
+            <br><br>
+            <ul style="list-style-type:none;">
+                
+                <li><a href="viewappointment.php">View All Appointment</a></li>
+            </ul>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <ul>
+
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
+             <h2 class="text-center text-primary">Admin Dashboard</h2>
+             <ul>
                 <li>Welcome mr/mrs<span class="text-primary"> <?php echo $_SESSION['fullname']; ?></span> </li>
                 <li>Welcome <span class="text-primary"><?php echo $_SESSION['role']; ?> </span></li>
                 <li>From <span class="text-primary"><?php echo $_SESSION['dept']; ?> deparment</span></li>
@@ -93,15 +98,11 @@ if (!isset($_SESSION['loggedin'])) {
                 ?>
 
 
-
-
-
-
-
-
-            
         </div>
-        <div class="col-md-4"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+        <a href="logout.php" class="btn btn-primary">Logout</a>
+        </div>
     </div>
 </div>
 </body>

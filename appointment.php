@@ -24,6 +24,14 @@ if (!isset($_SESSION['loggedin'])) {
                 
             
             <form action="processappointment.php" method="post">
+
+                 <?php
+                    if (isset($_SESSION['message']) && !empty($_SESSION['message'])) {
+                        echo "<h6 class='text-success'>" . $_SESSION['message'] . "</h6>";
+                        session_destroy();
+                    }
+
+                ?>
                 <p>
                     <?php
                        if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
