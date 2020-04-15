@@ -7,14 +7,15 @@ if (!isset($_SESSION['loggedin'])) {
 ?>
 
 <div class="container-fluid">
+<br><br>
     <div class="row">
-        <br><br>
     <div class="col-md-2" style="border-right:2px blue solid;">
             <img src="img/cartoon.jpg" alt="" height="100" width="100"  style="border-radius:50%;">
             <br><br>
             <ul style="list-style-type:none;">
-                
-                <li><a href="viewappointment.php">View All Appointment</a></li>
+                <li><a href="viewpatients.php">View All Patients</a></li>
+                 <hr>
+                <li><a href="viewstaff.php">View All Staff</a></li>
             </ul>
         </div>
 
@@ -24,7 +25,7 @@ if (!isset($_SESSION['loggedin'])) {
              <ul>
                 <li>Welcome mr/mrs<span class="text-primary"> <?php echo $_SESSION['fullname']; ?></span> </li>
                 <li>Welcome <span class="text-primary"><?php echo $_SESSION['role']; ?> </span></li>
-                <li>From <span class="text-primary"><?php echo $_SESSION['dept']; ?> deparment</span></li>
+                <li>Deparment <span class="text-primary"> <?php echo $_SESSION['dept']; ?> </span></li>
                 <li>You Registered On <span class="text-primary"><?php echo $_SESSION['reg_date']; ?></span></li>
                 <li>you last loggedin on <span class="text-primary"><?php echo $_SESSION['log_date']; ?></span></li>
             </ul>

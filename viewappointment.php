@@ -17,6 +17,19 @@ if (!isset($_SESSION['loggedin'])) {
         <div class="col-md-1"></div>
         <div class="col-md-6">
             <h2 class="text-center text-primary">Staff Dashboard</h2>
+            <table class="table table-striped">
+                
+                <thead class="thead-dark">
+                  <tr>
+                    <th>Patient name</th>
+                    <th>Appointment date</th>
+                    <th>Appointment time</th>
+                    <th>Case nature</th>
+                    <th>Complaint</th>
+                    <th>Booked department</th>
+                  </tr>
+            </thead>
+            <tbody>
     
     
     <?php
@@ -43,19 +56,7 @@ if (!isset($_SESSION['loggedin'])) {
 
             if ($booked_department == $_SESSION['dept']) { ?>
 
-                <table class="table table-striped">
-                
-                <thead class="thead-dark">
-                  <tr>
-                    <th>Patient name</th>
-                    <th>Appointment date</th>
-                    <th>Appointment time</th>
-                    <th>Case nature</th>
-                    <th>Complaint</th>
-                    <th>Booked department</th>
-                  </tr>
-            </thead>
-                <tbody>
+               
                   <tr>
                     <td scope="col"><?php echo $patient_name ;?></td>
                     <td scope="col"><?php echo $app_date ;?></td>
@@ -64,16 +65,16 @@ if (!isset($_SESSION['loggedin'])) {
                     <td scope="col"><?php echo $complaint ;?></td>
                     <td scope="col"><?php echo $booked_department ;?></td>
                   </tr>
-                </tbody>
-                </table>
+               
         <?php
                 
             }
         }
             
             ?>
+         </tbody>
+        </table>
         </div>
-
         <div class="col-md-1"></div>
         <div class="col-md-2" style="border-left:2px blue solid;">
             <a href="logout.php" class="btn btn-primary">Logout</a>
