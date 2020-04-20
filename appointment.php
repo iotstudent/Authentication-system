@@ -1,5 +1,6 @@
 <?php include "lib/header.php"; ?>
 <?php session_start(); ?>
+<?php include "lib/functions.php";?>
 <?php
 if (!isset($_SESSION['loggedin'])) {
     header("Location:login.php");
@@ -26,18 +27,11 @@ if (!isset($_SESSION['loggedin'])) {
             <form action="processappointment.php" method="post">
 
                  <?php
-                    if (isset($_SESSION['message']) && !empty($_SESSION['message'])) {
-                        echo "<h6 class='text-success'>" . $_SESSION['message'] . "</h6>";
-                        session_destroy();
-                    }
-
+                   success_alert();
                 ?>
                 <p>
                     <?php
-                       if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
-                            echo "<h6 class='text-danger'>".$_SESSION['error']."</h6>";
-                             session_destroy();
-                       }
+                       error_alert();
                     ?>
                 </p>
                     <div class="form-group center">

@@ -1,4 +1,6 @@
 <?php include "lib/header.php";?>
+<?php session_start(); ?>
+<?php include "lib/functions.php"?>
 <?php
 if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
     header("Location:dashboard.php");
@@ -10,11 +12,7 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
                 <h2 class="text-center text-primary"> Login</h2>
 
                 <?php
-                    if (isset($_SESSION['message']) && !empty($_SESSION['message'])) {
-                        echo "<h6 class='text-success'>" . $_SESSION['message'] . "</h6>";
-                        session_destroy();
-                    }
-
+                    success_alert();
                 ?>
 
             </div>
@@ -26,10 +24,7 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
 
                 <p>
                     <?php
-                    if (isset($_SESSION['error']) && !empty($_SESSION['error'])) {
-                        echo "<h6 class='text-danger'>" . $_SESSION['error'] . "</h6>";
-                        session_destroy();
-                    }
+                        error_alert();
                     ?>
                 </p>
                     
@@ -42,10 +37,12 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
                     </div>
                    
                     <input type="submit" name="submit" value="login" class="btn btn-primary">
-                    <a  href="index.php" class="btn btn-primary">Home</a>
+                    <a  href="forgotpassword.php">Forgot password</a>
                 </form>
             </div>
-            <div class="col-md-3"></div>
+            <div class="col-md-3">
+                <a href="index.php" class="btn btn-primary">Home</a>
+            </div>
         </div>
     </div>
 </body>

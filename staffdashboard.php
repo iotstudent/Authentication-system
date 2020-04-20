@@ -15,6 +15,8 @@ if (!isset($_SESSION['loggedin'])) {
             <ul style="list-style-type:none;">
                 
                 <li><a href="viewappointment.php">View All Appointment</a></li>
+                <hr>
+                <li><a href="reset.php">Reset Password</a></li>
             </ul>
         </div>
 

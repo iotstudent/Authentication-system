@@ -1,5 +1,6 @@
 <?php include "lib/header.php";?>
 <?php session_start(); ?>
+<?php include "lib/functions.php"; ?>
 <?php
 if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
     header("Location:dashboard.php");
@@ -17,10 +18,7 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
                 <form action="processregister.php" method="post">
                 <p>
                     <?php
-                       if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
-                            echo "<h6 class='text-danger'>".$_SESSION['error']."</h6>";
-                             session_destroy();
-                       }
+                       error_alert();
                     ?>
                 </p>
                     <div class="form-group center">

@@ -1,5 +1,6 @@
+<?php session_start(); ?>
+<?php include "lib/functions.php"; ?>
 <?php
-session_start();
 
 $errorCount = 0;
 

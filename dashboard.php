@@ -1,5 +1,6 @@
 <?php include "lib/header.php"; ?>
 <?php session_start(); ?>
+<?php include "lib/functions.php"; ?>
 <?php
 if (!isset($_SESSION['loggedin'])) {
     header("Location:login.php");
@@ -16,6 +17,8 @@ if (!isset($_SESSION['loggedin'])) {
                 <li><a href="viewpatients.php">View All Patients</a></li>
                  <hr>
                 <li><a href="viewstaff.php">View All Staff</a></li>
+                <hr>
+                <li><a href="reset.php">Reset Password</a></li>
             </ul>
         </div>
 
@@ -40,18 +43,11 @@ if (!isset($_SESSION['loggedin'])) {
                             <form action="processadduser.php" method="post">
                                 <h3 class="text-center text-primary">Add User</h3>
                                 <?php
-                                if (isset($_SESSION['message']) && !empty($_SESSION['message'])) {
-                                    echo "<h6 class='text-success'>" . $_SESSION['message'] . "</h6>";
-                                    session_destroy();
-                                }
-
+                                    success_alert();
                                 ?>
                                 <p>
                                     <?php
-                                    if (isset($_SESSION['error']) && !empty($_SESSION['error'])) {
-                                        echo "<h6 class='text-danger'>" . $_SESSION['error'] . "</h6>";
-                                        session_destroy();
-                                    }
+                                        error_alert();
                                     ?>
                                 </p>
                                 <div class="form-group center">
