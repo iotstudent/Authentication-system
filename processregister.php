@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php include "lib/functions.php"; ?>
+<?php include "lib/register_functions.php"; ?>
 <?php
 
 $errorCount = 0;
@@ -24,29 +24,11 @@ $_SESSION['department'] = $department;
 
 
 // checking for string length
-if(strlen($first_name) < 2 || strlen($last_name) < 2){
-    $_SESSION['error'] = " first name or last name too short";
-    header("Location: register.php");
-    die();
-}
-
+input_length();
 // checking for presence of numbers in the string
-if(preg_match('~[0-9]+~',$first_name) || preg_match('~[0-9]+~',$last_name)){
-    $_SESSION['error'] = " first name and last name might have integers";
-    header("Location: register.php");
-    die();
-}
-
+check_for_number_in_string();
 // checking for lenght or validity of mail
-if(strlen($email) < 5 || (substr_count($email,'@') != 1) || (substr_count($email,'.') < 1)){
-    $_SESSION['error'] = " Something is wrong with your email ";
-    header("Location: register.php");
-    die();
-}
-
-
-
-
+validity_of_mail();
 
 
 if ($errorCount > 0) {

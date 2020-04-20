@@ -3,7 +3,7 @@
 <?php include "lib/functions.php"?>
 <?php
 if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
-    header("Location:dashboard.php");
+    header("Location:admindashboard.php");
 }
 ?>
     <div class="container-fluid">

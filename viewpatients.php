@@ -69,7 +69,7 @@ if (!isset($_SESSION['loggedin'])) {
         </table>
         </div>
         <div class="col-md-1"></div>
-        <div class="col-md-2">
+        <div class="col-md-2" style="border-left:2px blue solid;">
         <a href="logout.php" class="btn btn-primary">Logout</a>
         </div>
     </div>

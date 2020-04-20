@@ -54,7 +54,7 @@ if ($errorCount > 0) {
                     header("Location: staffdashboard.php"); 
                     die();   
                 }else{
-                header("Location: dashboard.php");
+                header("Location: admindashboard.php");
                 die();
                 }
             }

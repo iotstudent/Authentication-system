@@ -25,7 +25,7 @@ if (!isset($_SESSION['loggedin'])) {
         <div class="col-md-1"></div>
         <div class="col-md-6">
              <h2 class="text-center text-primary">Admin Dashboard</h2>
-             <ul>
+             <ul style="list-style-type:none;">
                 <li>Welcome mr/mrs<span class="text-primary"> <?php echo $_SESSION['fullname']; ?></span> </li>
                 <li>Welcome <span class="text-primary"><?php echo $_SESSION['role']; ?> </span></li>
                 <li>Deparment <span class="text-primary"> <?php echo $_SESSION['dept']; ?> </span></li>
@@ -97,7 +97,7 @@ if (!isset($_SESSION['loggedin'])) {
 
         </div>
         <div class="col-md-1"></div>
-        <div class="col-md-2">
+        <div class="col-md-2" style="border-left:2px blue solid;">
         <a href="logout.php" class="btn btn-primary">Logout</a>
         </div>
     </div>
