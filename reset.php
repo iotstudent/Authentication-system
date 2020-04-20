@@ -1,7 +1,7 @@
 <?php include "lib/header.php" ;?>
 <?php session_start() ;?>
 <?php
-  if(!isset($_GET['token']) && !isset($_SESSION['token'])){
+  if(!$_SESSION['loggedin'] &&! isset($_GET['token']) && !isset($_SESSION['token'])){
       $_SESSION['error'] = "you are not authorised to view this";
       header("Location: login.php");
   }
@@ -35,16 +35,20 @@
                     }
                     ?>
                 </p>
-                    
+                <?php if(!$_SESSION['loggedin']){?>
+                 <div class="form-group center">
+                        <input type="hidden" class="form-control" name="token" value="<?php  echo $_GET['token'];?>">
+                    </div>
+                <?php } ?>
                     <div class="form-group center">
                         <input type="email" placeholder="email" class="form-control" name="email" required
-                        value="<?php if (isset($_SESSION['email'])){ echo $_SESSION['email'];}?>">
+                        value="<?php if(isset($_SESSION['email'])){ echo $_SESSION['email'];} ?>">
                     </div>
                     <div class="form-group center">
                         <input type="password" placeholder="password" class="form-control" name="password" required>
                     </div>
 
-                    <input type="submit" name="submit" value="Send Reset code" class="btn btn-primary">
+                    <input type="submit" name="submit" value="Reset password" class="btn btn-primary">
                 </form>
             </div>
             <div class="col-md-3"></div>

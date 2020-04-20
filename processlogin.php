@@ -44,6 +44,7 @@ if ($errorCount > 0) {
                 $_SESSION['loggedin'] = $userObject->id;
                 $_SESSION['fullname'] = $userObject->first_name . " " .$userObject->last_name;
                 $_SESSION['role'] = $userObject->designation;
+                $_SESSION['email'] = $userObject->email;
                 $_SESSION['dept'] = $userObject->department;
                 $_SESSION['reg_date'] = $userObject->reg_date;
                 $_SESSION['log_date'] = date("Y-m-d h:i:sa");
