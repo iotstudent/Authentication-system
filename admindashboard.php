@@ -18,6 +18,8 @@ if (!isset($_SESSION['loggedin'])) {
                  <hr>
                 <li><a href="viewstaff.php">View All Staff</a></li>
                 <hr>
+                <li><a href="viewpayment.php">View Payments</a></li>
+                <hr>
                 <li><a href="reset.php">Reset Password</a></li>
             </ul>
         </div>

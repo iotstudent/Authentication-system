@@ -16,7 +16,7 @@ if (!isset($_SESSION['loggedin'])) {
 
         <div class="col-md-1"></div>
         <div class="col-md-6">
-            <h2 class="text-center text-primary">Staff Dashboard</h2>
+            <h2 class="text-center text-primary">All Payments</h2>
             <table class="table table-striped">
                 
                 <thead class="thead-dark">
@@ -24,8 +24,6 @@ if (!isset($_SESSION['loggedin'])) {
                     <th>Patient name</th>
                     <th>Appointment date</th>
                     <th>Appointment time</th>
-                    <th>Case nature</th>
-                    <th>Complaint</th>
                     <th>Payment Status </th>
                   </tr>
             </thead>
@@ -55,15 +53,13 @@ if (!isset($_SESSION['loggedin'])) {
             $complaint = $userObject->complaint;
             $payment_status = $userObject->payment_status;
 
-            if ($booked_department == $_SESSION['dept']) { ?>
+             ?>
 
                
                   <tr>
                     <td scope="col"><?php echo $patient_name ;?></td>
                     <td scope="col"><?php echo $app_date ;?></td>
                     <td scope="col"><?php echo $app_time ;?></td>
-                    <td scope="col"><?php echo $case_nature ;?></td>
-                    <td scope="col"><?php echo $complaint ;?></td>
                     <td scope="col">
                         
                         <?php 
@@ -75,21 +71,14 @@ if (!isset($_SESSION['loggedin'])) {
                         ?>
                     
                     </td>
-                    <td scope="col">
-                        <?php
-                            if ($payment_status != "paid") {
-                                echo "<a href='accept.php' class='btn btn-success'>" . " Accept " . "</a>";
-                            }
-                        ?>
-                    </td>
+                   
                   </tr>
                
         <?php
                 
             }
-        }
             
-            ?>
+        ?>
          </tbody>
         </table>
         </div>

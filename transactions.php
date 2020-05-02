@@ -12,21 +12,23 @@ if (!isset($_SESSION['loggedin'])) {
         <div class="col-md-2" style="border-right:2px blue solid;">
             <img src="img/cartoon.jpg" alt="" height="100" width="100"  style="border-radius:50%;">
             <br><br>
+            <ul style="list-style-type:none;">
+                <li><a href="transactions.php">Transactions</a></li>
+                <hr>
+            </ul>
         </div>
 
         <div class="col-md-1"></div>
         <div class="col-md-6">
-            <h2 class="text-center text-primary">Staff Dashboard</h2>
+            <h2 class="text-center text-primary">Transactions</h2>
             <table class="table table-striped">
                 
                 <thead class="thead-dark">
                   <tr>
-                    <th>Patient name</th>
                     <th>Appointment date</th>
-                    <th>Appointment time</th>
-                    <th>Case nature</th>
                     <th>Complaint</th>
-                    <th>Payment Status </th>
+                    <th>Amount paid</th>
+                    <th>Date paid</th>
                   </tr>
             </thead>
             <tbody>
@@ -47,41 +49,20 @@ if (!isset($_SESSION['loggedin'])) {
 
             $userString = file_get_contents("db/appointments/" . $currentUser);
             $userObject = json_decode($userString);
-            $booked_department = $userObject->department_booked;
             $patient_name = $userObject->full_name;
             $app_date = $userObject->app_date;
             $app_time = $userObject->app_time;
             $case_nature = $userObject->case_nature;
             $complaint = $userObject->complaint;
-            $payment_status = $userObject->payment_status;
 
-            if ($booked_department == $_SESSION['dept']) { ?>
+            if ($patient_name == $_SESSION['fullname']) { ?>
 
                
                   <tr>
-                    <td scope="col"><?php echo $patient_name ;?></td>
                     <td scope="col"><?php echo $app_date ;?></td>
-                    <td scope="col"><?php echo $app_time ;?></td>
-                    <td scope="col"><?php echo $case_nature ;?></td>
                     <td scope="col"><?php echo $complaint ;?></td>
-                    <td scope="col">
-                        
-                        <?php 
-                           if($payment_status != "paid"){
-                               echo "Pending" ;
-                           }else{
-                              echo  $payment_status;
-                           }
-                        ?>
-                    
-                    </td>
-                    <td scope="col">
-                        <?php
-                            if ($payment_status != "paid") {
-                                echo "<a href='accept.php' class='btn btn-success'>" . " Accept " . "</a>";
-                            }
-                        ?>
-                    </td>
+                    <td scope="col"><?php echo $app_time ;?></td>
+                    <td scope="col">paid</td>
                   </tr>
                
         <?php

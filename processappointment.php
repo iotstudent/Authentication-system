@@ -8,7 +8,7 @@ $app_time = $_POST["app_time"] != "" ? $_POST['app_time'] : $errorCount++;
 $case_nature = $_POST["case_nature"] != "" ? $_POST['case_nature'] : $errorCount++;
 $complaint = $_POST["complaint"] != "" ? $_POST['complaint'] : $errorCount++;
 $booked_department = $_POST["booked_department"] != "" ? $_POST['booked_department'] : $errorCount++;
-
+$payment_status = '';
 
 $full_name = $_SESSION['fullname'] ;
 
@@ -27,6 +27,7 @@ if ($errorCount > 0) {
         'app_time'=>$app_time,
         'case_nature'=>$case_nature,
         'complaint'=>$complaint,
+        'payment_status'=>$payment_status,
     ];
 
 
