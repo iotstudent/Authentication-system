@@ -12,10 +12,7 @@ if (!isset($_SESSION['loggedin'])) {
         <div class="col-md-2" style="border-right:2px blue solid;">
             <img src="img/cartoon.jpg" alt="" height="100" width="100"  style="border-radius:50%;">
             <br><br>
-            <ul style="list-style-type:none;">
-                <li><a href="transactions.php">Transactions</a></li>
-                <hr>
-            </ul>
+            
         </div>
 
         <div class="col-md-1"></div>
@@ -61,8 +58,8 @@ if (!isset($_SESSION['loggedin'])) {
                   <tr>
                     <td scope="col"><?php echo $app_date ;?></td>
                     <td scope="col"><?php echo $complaint ;?></td>
-                    <td scope="col"><?php echo $app_time ;?></td>
-                    <td scope="col">paid</td>
+                    <td scope="col">5000</td>
+                    <td scope="col">2020-6-5</td>
                   </tr>
                
         <?php

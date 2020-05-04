@@ -12,10 +12,6 @@ if (!isset($_SESSION['loggedin'])) {
         <div class="col-md-2" style="border-right:2px blue solid;">
             <img src="img/cartoon.jpg" alt="" height="100" width="100" style="border-radius:50%;">
             <br><br>
-            <ul style="list-style-type:none;">
-                <li><a href="transactions.php">Transactions</a></li>
-                <hr>
-            </ul>
         </div>
 
         <div class="col-md-1"></div>

@@ -17,6 +17,8 @@ if (!isset($_SESSION['loggedin'])) {
                 <hr>
                 <li><a href="appointment.php">Appointment <span> <i  class="fa fa-user-md"></i> </span></a></li>
                 <hr>
+                <li><a href="transactions.php">Transactions</a></li>
+                <hr>
                 <li><a href="reset.php">Reset Password</a></li>
             </ul>
         </div>
