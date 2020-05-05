@@ -47,6 +47,7 @@ if (!isset($_SESSION['loggedin'])) {
 
             $userString = file_get_contents("db/appointments/" . $currentUser);
             $userObject = json_decode($userString);
+            $AppointmentId=$userObject->Id;
             $booked_department = $userObject->department_booked;
             $patient_name = $userObject->full_name;
             $app_date = $userObject->app_date;
@@ -59,6 +60,7 @@ if (!isset($_SESSION['loggedin'])) {
 
                
                   <tr>
+                  <td scope="col"><?php echo $AppointmentId ;?></td>
                     <td scope="col"><?php echo $patient_name ;?></td>
                     <td scope="col"><?php echo $app_date ;?></td>
                     <td scope="col"><?php echo $app_time ;?></td>

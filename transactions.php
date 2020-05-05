@@ -48,9 +48,9 @@ if (!isset($_SESSION['loggedin'])) {
             $userObject = json_decode($userString);
             $patient_name = $userObject->full_name;
             $app_date = $userObject->app_date;
-            $app_time = $userObject->app_time;
-            $case_nature = $userObject->case_nature;
             $complaint = $userObject->complaint;
+            $Amount_paid=$userObject->Amount_paid;
+            $date_paid=$userObject->Date_paid;
 
             if ($patient_name == $_SESSION['fullname']) { ?>
 
@@ -58,8 +58,8 @@ if (!isset($_SESSION['loggedin'])) {
                   <tr>
                     <td scope="col"><?php echo $app_date ;?></td>
                     <td scope="col"><?php echo $complaint ;?></td>
-                    <td scope="col">5000</td>
-                    <td scope="col">2020-6-5</td>
+                    <td scope="col"><?php echo $Amount_paid ;?></td>
+                    <td scope="col"><?php echo $date_paid ;?></td>
                   </tr>
                
         <?php

@@ -21,10 +21,12 @@ if (!isset($_SESSION['loggedin'])) {
                 
                 <thead class="thead-dark">
                   <tr>
+                    <th>Appointment Id</th>
                     <th>Patient name</th>
                     <th>Appointment date</th>
                     <th>Appointment time</th>
                     <th>Payment Status </th>
+                    <th>Amount Paid</th>
                   </tr>
             </thead>
             <tbody>
@@ -45,6 +47,7 @@ if (!isset($_SESSION['loggedin'])) {
 
             $userString = file_get_contents("db/appointments/" . $currentUser);
             $userObject = json_decode($userString);
+            $AppointmentId=$userObject->Id;
             $booked_department = $userObject->department_booked;
             $patient_name = $userObject->full_name;
             $app_date = $userObject->app_date;
@@ -52,11 +55,13 @@ if (!isset($_SESSION['loggedin'])) {
             $case_nature = $userObject->case_nature;
             $complaint = $userObject->complaint;
             $payment_status = $userObject->payment_status;
-
+            $Amount_paid=$userObject->Amount_paid;
+            $payment_status = $userObject->payment_status;
              ?>
 
                
                   <tr>
+                  <td scope="col"><?php echo $AppointmentId ;?></td>
                     <td scope="col"><?php echo $patient_name ;?></td>
                     <td scope="col"><?php echo $app_date ;?></td>
                     <td scope="col"><?php echo $app_time ;?></td>
@@ -71,7 +76,7 @@ if (!isset($_SESSION['loggedin'])) {
                         ?>
                     
                     </td>
-                   
+                    <td scope="col"><?php echo $Amount_paid ;?></td>
                   </tr>
                
         <?php

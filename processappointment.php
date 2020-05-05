@@ -13,14 +13,21 @@ $payment_status = '';
 $full_name = $_SESSION['fullname'] ;
 
 
+
+
 if ($errorCount > 0) {
     $_SESSION['error'] = " you have " . $errorCount . " error in your form";
     header("Location: appointment.php");
 } else {
 
-   
+    $allAppointments = scandir("db/appointments/");
+    $countAllAppointments = count($allAppointments);
+    $newAppointmentId = ($countAllAppointments - 1);
+
+    $_SESSION['appointmentId'] = $newAppointmentId;
     // creating json data object
     $appointmentObject = [
+        'Id' =>$newAppointmentId,
         'full_name' => $full_name,
         'department_booked' => $booked_department,
         'app_date' =>$app_date,
@@ -34,8 +41,8 @@ if ($errorCount > 0) {
 
 
 
-    file_put_contents("db/appointments/" . $full_name. $app_date . ".json", json_encode($appointmentObject));
+    file_put_contents("db/appointments/" . $full_name. $_SESSION['appointmentId'] . ".json", json_encode($appointmentObject));
     $_SESSION['message'] = " Booking successful ";
 
-    header("Location: appointment.php");
+    header("Location: patientdashboard.php");
 }
